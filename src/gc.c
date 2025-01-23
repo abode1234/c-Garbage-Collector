@@ -55,6 +55,17 @@ static void gc_sweep(GarbageCollector* gc) {
     }
 }
 
+size_t gc_count_allocations(const GarbageCollector* gc) {
+    size_t count = 0;
+    Allocation* current = gc->allocations;
+    while (current != NULL) {
+        count++;
+        current = current->next;
+    }
+    return count;
+}
+
+
 void gc_collect(GarbageCollector* gc) {
     void* stack_top = __builtin_frame_address(0);
     for (void** p = (void**)stack_top; p < (void**)gc->stack_bottom; p++) {

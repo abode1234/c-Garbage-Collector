@@ -20,5 +20,6 @@ typedef struct {
 void gc_init(GarbageCollector* gc, void* stack_bottom);
 void* gc_malloc(GarbageCollector* gc, size_t size, void (*dtor)(void*));
 void gc_collect(GarbageCollector* gc);
+size_t gc_count_allocations(const GarbageCollector* gc);
 
 #endif

@@ -21,11 +21,14 @@ int main(int argc, char* argv[]) {
     n2->data = 20;
     n1->next = n2;
 
+    printf("n1 = %p\n", n1->next);
+    printf("before = %zu\n", gc_count_allocations(&gc));
+
     n1->next = NULL;
 
-    printf("before : 2 \n");
     gc_collect(&gc);
-    printf("after : 1 \n");
+
+    printf("after = %zu\n", gc_count_allocations(&gc));
 
     return 0;
 }
