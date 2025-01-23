@@ -37,7 +37,7 @@ This garbage collector implements a conservative mark-and-sweep algorithm that a
 ### Build Steps
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/garbage-collector.git
+git clone https://github.com/abode1234/c-Garbage-Collector.git
 cd garbage-collector
 
 # Build the library
